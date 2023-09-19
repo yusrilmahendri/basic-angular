@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello angular baby</p>
+    <p>this is interpolasi, {{ getUser() }}</p>
+    <p>========</p>
+    <p>here property bunding</p>
+    <input [id] = 'textId' type="text" value="hallo">
+    <p class="textGreen">Class building</p>
+    <p [class]="textSuccess">Class building</p>
+    <p [class.textRed]="isError"> class buildings</p>
+    <p [ngClass]="messageText"> class buildings</p>
+
+    <!-- style binding -->  
+    <h2 [style.color] ="isError ? 'red': textGreen">style binding</h2>
+    <h2 [ngStyle] = "textStyle">style biding</h2>
+
+    <!--  template reference variabel -->
+    <p>reference variabel</p>
+    <input type="text" #textInput>
+    <button (click)="onInput(textInput.value)">
+        click here
+    </button>
+    {{ name }}
+
+    <p>Event binding</p>
+    <button (click)="onClick($event)">
+        click me
+    </button>
+    {{ name }}
+
+    <p>Two Way Binding</p>
+    <input type="text" [(ngModel)] = "nama">
+    {{nama}}
+
+    <P>ngIF dIRECTIVE</P>
+    <div *ngIf = "displayText; else falseBlock">
+        <h2>learn if</h2>
+    </div>
+    
+    <div *ngIf = "displayText; then trueBlock else falseBlock">
+        <h2>learn if</h2>
+    </div>
+
+    <ng-template #trueBlock>
+        <h2>learn if ng templates</h2>
+    </ng-template>
+
+    <ng-template #falseBlock>
+            <h2>learn if ng templates</h2>
+    </ng-template>
+
+    <p>NG SWITCH DRIECTIVE</p>
+
+    <div [ngSwitch] = "buah">
+        <div *ngSwitchCase="'jeruk'">selection jeruk</div>
+        <div *ngSwitchCase="'mangga'">selection jeruk</div>
+        <div *ngSwitchCase="'apel'">selection jeruk</div>
+        <div *ngSwitchDefault>{{ buah }} not found</div>
+    </div>
+
+    <h1>NG FOR DIRECTIVE</h1>
+    <!-- m=with method odd akan menampilkan ganjil genap berdasarkan index -->
+    <!-- sedangkan with method event sebaliknya dari odd-->
+    <div *ngFor="let data of buahKu; index as i">
+        <p> {{i}}, {{ buahKu }}</p>
+    </div>
+
+    <div *ngFor="let data of buahKu; first as x">
+        <p> {{x}}, {{ buahKu }}</p>
+    </div>
+
+    <div *ngFor="let data of buahKu; last as y">
+        <p> {{y}}, {{ buahKu }}</p>
+    </div>
+
+
+    <p>component interactive</p>
+    <h2>{{ parentData }}</h2>
+    <button (click)="sendEvent()">
+        send event
+    </button>
+
+    <p>Learn pipe</p>
+    <h1>{{ names | lowercase }}</h1>
+    <h2>{{ textStyle | json }}</h2>
+    <h2>{{ 0.27 | number: '1.2-3' }}</h2>
+    <h2>{{ 0.27 | percent }}</h2>
+    <h2>{{ 0.27 | currency: 'Rp.'  }}</h2>
+
+    <p>Routing and navigation </p>
+    <a href="/kelas">rOUTING KELAS</a>
+</body>
+</html>

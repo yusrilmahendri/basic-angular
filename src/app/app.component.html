@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+
+    <div class="container">
+      <p>
+        First Expression: {{10 + 20}} .this is experrsion dasar
+      </p>
+
+      <p>
+        this is should support expression number {{ jumlah * harga }}
+      </p>
+
+      <p>
+        support expression string : {{title + " and then " + topic }}
+      </p>
+
+      <p>
+        This support expressin object : {{ "my name is " + name.nameDepan + " age : " + name.age  }}
+      </p>
+
+      <p>
+        This support expression array : {{ randomValue[0] }}
+      </p>
+    </div>
+
+    <!-- this  call a component -->
+    <div class="app-learn-component">
+
+    </div>
+
+    <app-learn-component  (childEvent)="pesan=$event" [parentData]="message">
+
+    </app-learn-component>
+    <div>
+      <h2>{{ pesan }}</h2>
+    </div>
+
+    
+
+    <script src="" async defer></script>
+  </body>
+</html>
+
+<router-outlet></router-outlet>
